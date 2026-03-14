@@ -16,23 +16,23 @@ A lightweight, always-on-top Windows overlay that shows your default microphone'
 
 ## Quick Start (portable exe)
 
-Download `MicMute.exe` from [Releases](https://github.com/michaelnemtsev/StreamerMicIcon/releases) and run it. No installation or Python needed.
+Download `StreamerMicIcon.exe` from [Releases](https://github.com/michaelnemtsev/StreamerMicIcon/releases) and run it. No installation or Python needed.
 
 ## Run from Source
 
 ```bash
 pip install -r requirements.txt
-python mic_monitor.py
+python streamer_mic_icon.py
 ```
 
 ## Build Portable exe
 
 ```bash
 pip install pyinstaller
-python -m PyInstaller --onefile --noconsole --name MicMute mic_monitor.py
+python -m PyInstaller --onefile --noconsole --name StreamerMicIcon streamer_mic_icon.py
 ```
 
-The standalone exe will be in `dist/MicMute.exe`.
+The standalone exe will be in `dist/StreamerMicIcon.exe`.
 
 ## Dependencies
 
