@@ -4,6 +4,19 @@ A lightweight, always-on-top Windows overlay that shows your default microphone'
 
 ![Windows](https://img.shields.io/badge/platform-Windows-blue)
 
+## Preview
+
+<p align="center">
+  <img src="images/mic_live.png" alt="Mic Live" width="128">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="images/mic_muted.png" alt="Mic Muted" width="128">
+</p>
+
+<p align="center">
+  <b>Live</b> (green) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Muted</b> (red, flashing)
+</p>
+
 ## Features
 
 - **Transparent floating icon** — only the mic shape is visible, no window chrome
