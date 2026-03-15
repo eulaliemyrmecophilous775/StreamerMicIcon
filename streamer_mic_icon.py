@@ -1,10 +1,17 @@
 import sys
 import ctypes
+import ctypes.wintypes
 from ctypes import cast, POINTER
 
 from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.QtCore import Qt, QTimer, QRectF, QPointF, QPropertyAnimation, pyqtProperty
 from PyQt5.QtGui import QPainter, QColor, QPen, QBrush, QPainterPath
+
+HWND_TOPMOST = ctypes.wintypes.HWND(-1)
+SWP_NOMOVE = 0x0002
+SWP_NOSIZE = 0x0001
+SWP_NOACTIVATE = 0x0010
+_SetWindowPos = ctypes.windll.user32.SetWindowPos
 
 from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
@@ -76,11 +83,22 @@ class MicOverlay(QWidget):
         screen = QApplication.primaryScreen().geometry()
         self.move(screen.width() - size - 30, screen.height() - size - 80)
 
+    def _force_topmost(self):
+        hwnd = int(self.winId())
+        _SetWindowPos(
+            hwnd, HWND_TOPMOST, 0, 0, 0, 0,
+            SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE,
+        )
+
     def _start_polling(self):
         self._poll_mic()
         self.timer = QTimer(self)
         self.timer.timeout.connect(self._poll_mic)
         self.timer.start(250)
+
+        self._topmost_timer = QTimer(self)
+        self._topmost_timer.timeout.connect(self._force_topmost)
+        self._topmost_timer.start(1000)
 
     def _poll_mic(self):
         state = get_default_mic_mute_state()
